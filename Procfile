@@ -1,0 +1,1 @@
+web: gunicorn forno_italiano_pizzeria_project.wsgi

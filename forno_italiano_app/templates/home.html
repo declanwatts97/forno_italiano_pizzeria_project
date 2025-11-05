@@ -12,7 +12,69 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Home | Forno Italiano Pizzeria</title>
 </head>
-<body>
+<body class="bg-yellow-50 min-h-screen">
+
+    <!-- Navbar -->
+    <!-- Changed background to a deep red, text to white/light red -->
+    <nav class="bg-red-800 text-white shadow-lg w-full">
+        <div class="w-full px-3 sm:px-6">
+            <div class="flex justify-between items-center h-16">
+                
+                <!-- Logo / Site Title -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-2 pl-3 sm:pl-4">
+                        <img src="{% static 'images/logo.png' %}" class="h-12 w-auto" alt="Forno Italiano logo">
+                        <span class="text-3xl font-bold tracking-tight logo-font text-yellow-50">
+                            Forno Italiano Pizzeria
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <!-- Changed links and hover/active colors -->
+                <div class="hidden md:flex md:items-center md:space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Home</a>
+                    <a href="menu.html" class="px-3 py-2 rounded-md text-sm font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Menu</a>
+                    <a href="our-restaurants.html" class="px-3 py-2 rounded-md text-sm font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Our Restaurants</a>
+                    <!-- Changed button text and color -->
+                    <a href="book-table.html" class="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-green-600 hover:bg-green-700 transition duration-300 shadow-md">
+                        Book Table
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center pr-3 sm:pr-6">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-red-200 hover:text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger Icon -->
+                        <svg id="open-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Close Icon (hidden by default) -->
+                        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 
+          Mobile Menu
+          This menu is shown/hidden based on the button click.
+        -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Home</a>
+                <a href="menu.html" class="block px-3 py-2 rounded-md text-base font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Menu</a>
+                <a href="our-restaurants.html" class="block px-3 py-2 rounded-md text-base font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Our Restaurants</a>
+                <a href="book-table.html" class="block w-full text-left px-3 py-2 mt-2 rounded-md text-base font-medium text-white bg-green-600 hover:bg-green-700 transition duration-300">
+                    Book Table
+                </a>
+            </div>
+        </div>
+    </nav>
  
 <script src="{% static 'js/script.js' %}"></script>
 </body>

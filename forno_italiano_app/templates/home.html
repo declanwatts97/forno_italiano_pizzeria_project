@@ -19,14 +19,12 @@
 </head>
 <body class="flex flex-col bg-yellow-50 min-h-screen">
     <!-- Navbar -->
-    <!-- Changed background to a deep red, text to white/light red -->
     <nav class="bg-red-800 text-white shadow-lg w-full">
         <div class="w-full px-3 sm:px-6">
             <div class="flex justify-between items-center h-16">
                 
-                <!-- Logo / Site Title -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center space-x-2 pl-3 sm:pl-4">
+                    <a href="#" class="flex items-center space-x-2">
                         <img src="{% static 'images/logo.png' %}" class="h-12 w-auto" alt="Forno Italiano logo">
                         <span class="text-3xl tracking-tight logo-font text-yellow-50">
                             Forno Italiano Pizzeria
@@ -36,7 +34,8 @@
 
                 <!-- Desktop Navigation Links -->
                 <!-- Changed links and hover/active colors -->
-                <div class="hidden md:flex md:items-center md:space-x-4">
+                <!-- push desktop links right so they don't overlap the absolute logo -->
+                <div class="hidden md:flex md:items-center md:space-x-4 md:ml-48">
                     <a href="" class="px-3 py-2 rounded-md text-sm font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Home</a>
                     <a href="" class="px-3 py-2 rounded-md text-sm font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Menu</a>
                     <a href="" class="px-3 py-2 rounded-md text-sm font-medium text-red-100 hover:bg-red-700 hover:text-white transition duration-300">Our Restaurants</a>

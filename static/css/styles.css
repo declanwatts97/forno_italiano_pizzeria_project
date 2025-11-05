@@ -1,0 +1,17 @@
+/* Project-level static CSS — ensure footer sticks to bottom */
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+	background-color: black; /* fallback - page templates may override */
+	color: #fff;
+}
+
+main {
+	flex: 1 0 auto; /* allow main to grow and push footer to bottom */
+}

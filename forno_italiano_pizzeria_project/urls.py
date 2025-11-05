@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from forno_italiano_app import views as index_views
+
 urlpatterns = [
-    path('', index_views.index, name='index'),
+    path('menu/', index_views.menu, name='menu'),
+    path('our_restaurants/', index_views.our_restaurants, name='our_restaurants'),
+    path('booking_form/', index_views.booking_form, name='booking_form'),
+    path('', index_views.home, name='home'),
     path('admin/', admin.site.urls),
 ]

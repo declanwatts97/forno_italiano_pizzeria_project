@@ -25,9 +25,13 @@ The website has been created with the below goals in mind:
 
 1. 
 
+### Acceptance Criteria
+
 ### Goals of Site Developers
 
 1. 
+
+### Acceptance Criteria
 
 ## Structure
 

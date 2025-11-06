@@ -1,9 +1,6 @@
 from django.db import models
-
-# Create your models here.
-
-from django.db import models
 from django.core.exceptions import ValidationError
+# Create your models here.
 
 class Booking(models.Model):
     full_name = models.CharField(max_length=100)

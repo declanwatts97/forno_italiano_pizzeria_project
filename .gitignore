@@ -1,18 +1,2 @@
-# Local environment variables (keep out of VCS)
 env.py
 
-# Virtual environment
-.venv/
-
-# Local SQLite database
-db.sqlite3
-
-# Python cache and compiled files
-__pycache__/
-*.py[cod]
-
-# macOS
-.DS_Store
-
-# Staticfiles collected for production
-staticfiles/

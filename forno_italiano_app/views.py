@@ -13,9 +13,6 @@ def our_restaurants(request):
     return render(request, "our_restaurants.html")
 
 def booking_form(request):
-    return render(request, "booking_form.html")
-
-def book_table(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():

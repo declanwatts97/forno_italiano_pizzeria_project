@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
     <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lobster&display=swap" rel="stylesheet">
     <title>{% block title %}Home | Forno Italiano Pizzeria{% endblock %}</title>
 </head>
 <body class="flex flex-col bg-yellow-50 min-h-screen">
@@ -24,10 +25,10 @@
         <div class="w-full px-3 sm:px-6">
             <div class="flex justify-between items-center h-16">
                 
-                <div class="flex-shrink-0">
+                <div class="flex sm:text-sm lg:text-2xl">
                     <a href="#" class="flex items-center space-x-2">
                         <img src="{% static 'images/logo.png' %}" class="h-12 w-auto" alt="Forno Italiano logo">
-                        <span class="text-3xl tracking-tight logo-font text-yellow-50">
+                        <span class="text-xl tracking-tight logo-font text-yellow-50">
                             Forno Italiano Pizzeria
                         </span>
                     </a>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from forno_italiano_pizzeria_project.forms import BookingForm
+from .forms import BookingForm
 # Create your views here.
 
 def home(request):

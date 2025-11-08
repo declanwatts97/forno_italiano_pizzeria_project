@@ -1,5 +1,5 @@
-rom django import forms
-from forno_italiano_app.models import Booking
+from django import forms
+from .models import Booking
 
 class BookingForm(forms.ModelForm):
     class Meta:

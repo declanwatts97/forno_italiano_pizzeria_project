@@ -1,3 +1,4 @@
+{# templates/base.html #}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
     <link rel="manifest" href="/site.webmanifest">
-    <title>Home | Forno Italiano Pizzeria</title>
+    <title>{% block title %}Home | Forno Italiano Pizzeria{% endblock %}</title>
 </head>
 <body class="flex flex-col bg-yellow-50 min-h-screen">
     <!-- Navbar -->
@@ -80,7 +81,9 @@
     </nav>
 
     <main class="flex-grow">
-
+        {% block content %}
+        <!-- to be filled on individual pages-->
+         {% endblock %}
     </main>
 
     <!-- Footer Section -->
@@ -88,6 +91,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
+
                 <!-- Column 1: Contact Info -->
                 <div>
                     <h4 class="text-lg font-semibold text-yellow-50 mb-4">Contact Us</h4>
@@ -141,5 +145,6 @@
     </footer>
 
 <script src="{% static 'js/script.js' %}"></script>
+{% block extra_js %} {% endblock %}
 </body>
 </html>

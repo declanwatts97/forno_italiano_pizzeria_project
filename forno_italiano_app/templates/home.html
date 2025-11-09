@@ -7,7 +7,18 @@
 
 {% block content %}
 
+<!-- Hero Section -->
+<div style="background-image: url('{% static 'images/pizzeria-hero.png' %}')" class="relative h-[60vh] bg-cover bg-center text-white flex flex-col items-center justify-center text-center">
+    
+<div class="absolute inset-0 bg-black opacity-50"></div>
 
-
+<div class="relative z-10 p-4">
+    <h1 class="text-4xl md:text-6xl font-bold logo-font text-yellow-50">Welcome to Forno Italiano</h1>
+    <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">Authentic Italian pizza in the heart of Newcastle. Taste the tradition, feel the passion.</p>
+    <a href="{% url 'booking_form' %}" class="mt-8 inline-block px-6 py-3 rounded-md text-lg font-medium text-white bg-green-600 hover:bg-green-700 transition duration-300 shadow-lg">
+        Book Your Table
+    </a>
+</div>
+</div>
 
 {% endblock %}

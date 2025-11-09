@@ -6,7 +6,43 @@
 
 {% block content %}
 
+<div class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
 
+            <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center logo-font text-red-800">Our Restaurant</h1>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
+                <div class="space-y-8 mt-5">
+                    <div>
+                        <h2 class="text-2xl text-red-800 mb-3">Visit Us</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            30-40 Grey St,<br>
+                            Newcastle upon Tyne, NE1 6AE
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl text-red-800 mb-3">Contact Us</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                             <strong> Phone Number:</strong> 0191 414 3587 <br>
+                             <strong> Email Address:</strong> info@fornoitaliano.com
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl text-red-800 mb-3">Opening Hours</h2>
+                        <ul class="text-gray-600 space-y-1">
+                            <li><strong>Monday - Friday:</strong> 12:00 PM - 10:00 PM</li>
+                            <li><strong>Saturday:</strong> 12:00 PM - 11:00 PM</li>
+                            <li><strong>Sunday:</strong> 1:00 PM - 9:00 PM</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+                <img src="{% static 'images/pizzeria-img.png' %}" class="h-auto w-full object-cover rounded-md mt-5" alt="pizzeria image">"
+                <div>
+                </div>
+            </div>
+        </div>
+</div>
 {% endblock %}

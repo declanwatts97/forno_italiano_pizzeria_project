@@ -17,7 +17,7 @@ class Booking(models.Model):
     def clean(self):
         
         if Booking.objects.exclude(pk=self.pk).filter(date=self.date, time=self.time).exists():
-            raise ValidationError("This time slot is already booked. Please choose another time.")
+            raise ValidationError("Please note we are a small family business so will only be accepting staggered bookings at this time.")
 
     def __str__(self):
         return f"{self.full_name} - {self.date} {self.time}"

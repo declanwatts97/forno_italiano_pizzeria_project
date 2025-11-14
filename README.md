@@ -10,6 +10,46 @@ Welcome to Forno Italiano Pizzeria! We are a small family run pizzeria located i
 
 ## Table of Contents
 
+- [Forno Italiano Pizzeria - Project 3](#forno-italiano-pizzeria-project-3)
+      + [Introduction](#introduction)
+   * [Table of Contents](#table-of-contents)
+   * [User Experience](#user-experience)
+      + [User Requirements](#user-requirements)
+   * [User Stories](#user-stories)
+      + [Website Visitors](#website-visitors)
+      + [Acceptance Criteria](#acceptance-criteria)
+      + [Goals of Site Developers](#goals-of-site-developers)
+      + [Acceptance Criteria](#acceptance-criteria-1)
+   * [Structure](#structure)
+      + [Navbar](#navbar)
+      + [Footer](#footer)
+      + [Home Page](#home-page)
+      + [Menu Page](#menu-page)
+      + [Our Restaurant Page](#our-restaurant-page)
+      + [Book Table Page](#book-table-page)
+      + [Book Table Success Page](#book-table-success-page)
+   * [Design](#design)
+      + [Wireframes](#wireframes)
+      + [Entity Relationship Diagram](#entity-relationship-diagram)
+      + [Colour Scheme](#colour-scheme)
+      + [Font](#font)
+   * [Imagery](#imagery)
+   * [Technologies Used](#technologies-used)
+      + [Development Tools](#development-tools)
+   * [Deployment](#deployment)
+      + [Deployment to Heroku](#deployment-to-heroku)
+      + [Deployment Procedure](#deployment-procedure)
+   * [Testing](#testing)
+      + [User Stories Testing](#user-stories-testing)
+      + [Manual Testing](#manual-testing)
+      + [Testing Summary](#testing-summary)
+      + [Browser Compatibility](#browser-compatibility)
+   * [Credits](#credits)
+      + [Content and Inspiration](#content-and-inspiration)
+      + [Acknowledgements ](#acknowledgements)
+   * [Contact Information](#contact-information)
+
+
 ## User Experience
 
 ### User Requirements
@@ -90,30 +130,41 @@ The site has 5 active pages:
 
 ### Navbar
 
+The navbar contains the pizzeria logo, name, and 4 active links. These links are to the menu, our restaurant page, book table page, and back to home. The navbar switches to a hamburger icon o  smaller screen sizes.
 
 
 ### Footer
 
-
+The footer has 3 social media links and contact information for the business. The social media links take you to the relevant social media and clicking on the contact information on mobile prompts you to call/email and the address takes you to view on a map.
 
 ### Home Page
+
+The home page is kept simple with a hero image displaying some of the restaurants pizza, with a book table option centre of the screen to enable customers to easily be able to get straight on with booking a table.
 
 ![home](static/readme-images/home.png)
 
 ### Menu Page
 
+The menu page is split into 4 sections for appetizers, pizzas, desserts and drinks. The menu items are laid out with the prices aligned to the right.
+
 ![menu](static/readme-images/menu.png)
 
 ### Our Restaurant Page
+
+The our restaurants page gives the customer all of the restaurants info. The contact information of email and phone number along with the address and the opening hours. There is also a picture of the inside of the restaurant.
 
 ![our restaurant](static/readme-images/our-restaurants.png)
 
 ### Book Table Page
 
+The book table page contains all the relevant information for a customer to reserve a table. This is displayed in a form to be filled in with a submit button once complete.
+
 ![alt text](static/readme-images/book-table.png)
 
 
 ### Book Table Success Page
+
+The table booking success page returns a message thanking the customer for booking and that we look forward to seeing them. Theres a return to home button to take them back to the home page.
 
 ![alt text](static/readme-images/booking-success.png)
 
@@ -201,25 +252,97 @@ See below step by step instructions for how to deploy to Heroku:
 11. Open the resources tab and choose an Eco Dyno.
 12. Click open app to view your deployed project!
 
-### Deployment to Heroku
 
 ## Testing
 
 ### User Stories Testing
 
-1. 
+1. As a user I require a clean simple design, I tested this by getting a friend to check over and ensure that all required information was easily available and the design was easy to follow.
+
+2. As a user I require easy clear navigation, I tested this by getting a friend to navigate around the site as a consumer and ensure it was simple.
+
+3. As a user I require the website to be responsive. This was tested on Google dev tools to ensure all screen sizes were responsive. This was also tested on my phone, iPad and desktop computer to ensure the deployed version matches the local version
+
+4. As a user I require the option to book a table. I tested this by acting as the consumer, walking through the process of booking a table and ensuring that I got the booking success response. I also tested that this pulled through to the admin panel for the site owner to see.
+
+5. As a user I require contact information for the restaurant. I tested this by checking the deployed version contained the correct information and that they can be directly accessed through mobile with a link to call or email, and an address which links to maps.
+
+6. As a user I require an expansive menu with prices. This was tested by getting a friend to review the menu to check they think it contains valid items, and also checked through AI that the prices are valid for the items.
+
+7. As a developer I require clean code which follows the standard for readability. This was tested by running the code through various validators (results shown further below).
+
+8. As a developer I require a database model relevant to the project. This was tested by completing the booking form and checking in the admin panel that all the required information is stored.
+
+9. As a developer I require the site to be responsive across all devices. This was tested as mentioned above in the user story.
+
+10. As a developer I require a readme document which outlines the planning, development and deployment procedure. I tested this by asking a friend to read through and check they can follow the life cycle of this project.
+
+11. As a developer I require customers to be able to book tables, an error message show if a double book in occurs. This was tested by purposely double booking through the deployed site and ensuring that it is rejected from being sent to the database with the message being returned.
 
 ### Manual Testing
 
-1.
+1. Navigation - I tested the navigation by clicking the navbar links and ensuring that they redirected me to the correct webpages. I tested this on multiple devices. This worked as expected.
+
+2. Footer - I tested the footer by clicking each social media icon to ensure that these redirected me to the correct social media site. As the pizzeria doesn’t have socials yet this just directed me to the social media companies home page. I also tested the contact info which redirects mobile users to the valid form of contact (email/phone) and maps for the address. This worked as expected.
+
+3. Webpage responsiveness - each webpage was tested across multiple screen sizes, to ensure that everything works as it should. I tested this mainly through chromes developer tools as well as my laptop and mobile phone. I have shown some screenshots below from the chrome developer tools for all web pages:
+
+![home ipad](static/readme-images/home-ipad.png)
+![menu ipad](static/readme-images/menu-ipad.png)
+![restaurant ipad](static/readme-images/restaurant-ipad.png)
+![booking ipad](static/readme-images/booking-ipad.png)
+
+![home mobile](static/readme-images/home-mobile.png)
+![menu mobile](static/readme-images/menu-mobile.png)
+![restaurant mobile](static/readme-images/restaurant-mobile.png)
+![booking mobile](static/readme-images/booking-mobile.png)
+
+4. Table booking - the table booking function was tested in 3 main ways:
+
+- Through filling in the information on the form and submitting, ensuring that the information was accepted and returned the success page.
+
+- Ensuring that this successful booking was sent through to the admin panel, with the booking and all information submitted showing to the site owner.
+
+- Purposely double booking and ensuring that the error message is returned to prevent a double booking.
+
+Screenshots for these points are below:
+
+![booking form](static/readme-images/booking-form.png)
+![booking error](static/readme-images/booking-error.png)
+![booking success](static/readme-images/booking-success.png)
+![booking admin](static/readme-images/booking-admin.png)
+
+5. HTML Validation - I ran my html code through the W3C validator service and have provided screenshots below. The only remaining errors are as a result of Django's blocks and templates:
+
+![base validation](static/readme-images/base-validation.png)
+![home validation](static/readme-images/home-validation.png)
+![menu validation](static/readme-images/menu.png)
+![our restaurant validation](static/readme-images/our-restaurant-validation.png)
+![booking form validation](static/readme-images/booking-form-validation.png)
+![booking success validation](static/readme-images/booking-success-validation.png)
+
+6. CSS validation - I ran my css code through the W3C validator service and have provided screenshots below. My code passed through the validator with no errors.
+
+![css validation](static/readme-images/css-validation.png)
+
+7. JavaScript Validation - I ran my JavaScript code through JS lint and have provided screenshots below. MY code passed through with no major errors on the validator.
+
+![js validation](static/readme-images/js-validation.png)
+
+8. Dev Tools - I checked my code through the console on chrome dev tools. One area to improve in the future is the that tailwind CCS needs to amended to a post CSS plugin or use the tailwind CLI for production. This will be fixed in future updates.
 
 ### Testing Summary
 
-
+As shown in the breakdown of testing above, the website meets all user and developer goals as well as being fully responsive. This is fully operational from a design and production viewpoint. Manual testing was the primary form of testing used in this project. Automated testing will be implemented in the future.
 
 ### Browser Compatibility
 
+This website was tested on the below browsers to ensure compatibility:
 
+- Safari
+- Google Chrome
+- Microsoft Edge
+- Firefox
 
 ## Credits
 ### Content and Inspiration

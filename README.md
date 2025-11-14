@@ -183,11 +183,12 @@ The below wireframes were created at the beginning of the design process, these 
 
 ### Entity Relationship Diagram
 
-![ERD](static/readme-images/ERD.png)
-
 The entity relationship diagram for this project is a single entity, meaning there are no one to many or many to many relationships. This entity stands alone.
 
 This shows the chosen model behind the database for the table booking system which has been put in place for the website.
+
+![entity relationship diagram](static/readme-images/entity-relationship-diagram.png)
+
 
 
 ### Colour Scheme

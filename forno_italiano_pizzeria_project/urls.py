@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from forno_italiano_app import views as index_views
+from django.conf import settings  
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('menu/', index_views.menu, name='menu'),
@@ -26,3 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('success/', index_views.booking_success, name='booking_success')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

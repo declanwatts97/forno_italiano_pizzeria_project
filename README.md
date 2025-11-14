@@ -49,7 +49,6 @@ Welcome to Forno Italiano Pizzeria! We are a small family run pizzeria located i
       + [Acknowledgements ](#acknowledgements)
    * [Contact Information](#contact-information)
 
-
 ## User Experience
 
 ### User Requirements
@@ -132,7 +131,6 @@ The site has 5 active pages:
 
 The navbar contains the pizzeria logo, name, and 4 active links. These links are to the menu, our restaurant page, book table page, and back to home. The navbar switches to a hamburger icon o  smaller screen sizes.
 
-
 ### Footer
 
 The footer has 3 social media links and contact information for the business. The social media links take you to the relevant social media and clicking on the contact information on mobile prompts you to call/email and the address takes you to view on a map.
@@ -161,13 +159,11 @@ The book table page contains all the relevant information for a customer to rese
 
 ![alt text](static/readme-images/book-table.png)
 
-
 ### Book Table Success Page
 
 The table booking success page returns a message thanking the customer for booking and that we look forward to seeing them. Theres a return to home button to take them back to the home page.
 
 ![alt text](static/readme-images/booking-success.png)
-
 
 ## Design
 
@@ -188,8 +184,6 @@ The entity relationship diagram for this project is a single entity, meaning the
 This shows the chosen model behind the database for the table booking system which has been put in place for the website.
 
 ![entity relationship diagram](static/readme-images/entity-relationship-diagram.png)
-
-
 
 ### Colour Scheme
 
@@ -240,9 +234,11 @@ This site has been deployed to Heroku. To view, please see below:
 
 See below step by step instructions for how to deploy to Heroku:
 
+First you need to clone this repositories URL, by copying the HTTPS. You can then open the terminal in your code editor and type git clone. Paste the previously copied URL and enter to create your local clone.
+
 1. Create a new app on Heroku with a unique name.
 2. Click on the settings tab and reveal the config vars. Add a key of DISABLE_COLLECTSTATIC and add a value of 1.
-3. Install a production ready web server to your project with pip3 install gunicorn~=20.1.
+3. Install a production ready web server to the project with pip3 install gunicorn~=20.1.
 4. Add your web server to requirements.txt with pip3 freeze --local > requirements.txt
 5. Create a file named Procfile at the root directory of the project.
 6. In the Procfile add web: gunicorn my_project.wsgi.
@@ -252,7 +248,6 @@ See below step by step instructions for how to deploy to Heroku:
 10. Scroll to the bottom of the page and manually deploy your site on the main branch.
 11. Open the resources tab and choose an Eco Dyno.
 12. Click open app to view your deployed project!
-
 
 ## Testing
 
@@ -317,7 +312,7 @@ Screenshots for these points are below:
 
 ![base validation](static/readme-images/base-validation.png)
 ![home validation](static/readme-images/home-validation.png)
-![menu validation](static/readme-images/menu.png)
+![menu validation](static/readme-images/menu-validation.png)
 ![our restaurant validation](static/readme-images/our-restaurant-validation.png)
 ![booking form validation](static/readme-images/booking-form-validation.png)
 ![booking success validation](static/readme-images/booking-success-validation.png)
@@ -358,8 +353,6 @@ This website was tested on the below browsers to ensure compatibility:
 - Favicon.io - for the favicon used in browser title.
 - Unsplash - for all images used on the webpage.
 - Gemini AI - for the logo and some menu ideas, as well as occasional assistance troubleshooting.
-
-
 
 ## Contact Information
 - For any queries or feedback, please contact declan.watts97@gmail.com

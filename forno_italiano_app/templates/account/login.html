@@ -1,35 +1,75 @@
-{% extends "base.html" %} 
-{% load i18n allauth account %}
+{# templates/account/login.html #}
+{% extends "base.html" %}
+{# You must load all tags used in the template #}
+{% load i18n allauth account widget_tweaks %}
 
-{% block head_title %}
-    {% trans "Sign In" %}
-{% endblock head_title %}
+{% block title %}{% trans "Sign In" %} | Forno Italiano Pizzeria{% endblock %}
 
 {% block content %}
-<div class="container mx-auto max-w-sm mt-10 p-6 bg-white shadow-lg rounded-lg">
-    <h1 class="text-2xl font-bold mb-4">{% trans "Sign In to Our Site" %}</h1>
-    
-    <p class="text-gray-600 mb-6">Welcome back! Please  your credentials below.</p>
+<div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md mt-10 mb-10">
+    <h1 class="text-3xl font-extrabold text-gray-800 mb-6 text-center">{% trans "Sign In" %}</h1>
+
+ 
+
+    {% if socialaccount.providers %}
+    <div class="text-center my-4 text-gray-500">
+        {% trans "— OR —" %}
+    </div>
+    {% endif %}
 
     {% url 'account_login' as login_url %}
     <form class="login" method="POST" action="{{ login_url }}">
         {% csrf_token %}
         
-        {{ form.as_p }}
-        
+        {% if form.non_field_errors %}
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 text-sm" role="alert">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% for field in form %}
+            <div class="mb-4">
+                <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700">
+                    {{ field.label }}
+                </label>
+                
+                {# KEY CHANGE: Using |attr filter to force text-black for visibility #}
+                {{ field|attr:'class:block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black' }} 
+
+                {% if field.errors %}
+                    <p class="mt-1 text-xs text-red-500">{{ field.errors }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
         {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
+
         
-        <button class="btn btn-primary w-full mt-4" type="submit">{% trans "Sign In" %}</button>
+        
+        <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition focus:outline-none focus:shadow-outline mt-3" type="submit">
+            {% trans "Sign In" %}
+        </button>
     </form>
 
-    <p class="text-center mt-6">
-        <a href="{% url 'account_reset_password' %}" class="text-sm text-blue-500 hover:text-blue-700">
+    <div class="text-center mt-4">
+        <a class="text-sm text-blue-600 hover:text-blue-800" href="{% url 'account_reset_password' %}">
             {% trans "Forgot Password?" %}
         </a>
-    </p>
+    </div>
 
+    <div class="text-center mt-6 pt-4 border-t border-gray-200">
+        <p class="text-gray-600 text-sm">
+            {% blocktrans %}Don't have an account?{% endblocktrans %}
+            <a class="text-blue-600 hover:text-blue-800 font-medium" href="{% url 'account_signup' %}">
+                {% trans "Sign Up" %}
+            </a>
+        </p>
+    </div>
     
+   
 </div>
-{% endblock content %}
+{% endblock %}

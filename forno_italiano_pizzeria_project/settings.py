@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'crispy_tailwind',
+    'widget_tweaks',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'

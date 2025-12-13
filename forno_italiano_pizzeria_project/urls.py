@@ -28,6 +28,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('success/', index_views.booking_success, name='booking_success'),
     path("accounts/", include("allauth.urls")),
+    path('my-bookings/', index_views.my_bookings, name='my_bookings'),
+    path('bookings/<int:pk>/details/', index_views.booking_details, name='booking_details'),
+    path('bookings/<int:pk>/cancel/', index_views.cancel_booking, name='cancel_booking'), 
+    path('bookings/<int:pk>/edit/', index_views.edit_booking, name='edit_booking'),
+    
 ]
 
 if settings.DEBUG:

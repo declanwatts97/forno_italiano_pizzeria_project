@@ -1,0 +1,105 @@
+{# forno_italiano_app/templates/my_bookings.html #}
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "My Bookings" %} | Forno Italiano Pizzeria{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl mt-10 mb-10">
+    <h1 class="text-3xl font-extrabold text-gray-800 mb-8 border-b pb-4 text-center">
+        {% trans "My Bookings" %}
+    </h1>
+
+    
+    {% if bookings %}
+        <p class="text-sm text-gray-600 mb-6 text-center">
+            You have **{{ bookings.count }}** active reservation{{ bookings.count|pluralize }} with us.
+        </p>
+        <div class="space-y-6">
+            {% for booking in bookings %}
+                
+                <div class="border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-300 bg-red-50">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                        
+                        <h2 class="text-xl font-bold text-red-900 mb-2 sm:mb-0">
+                            Reservation for {{ booking.number_of_guests }} People
+                        </h2>
+                        
+                        
+                        <span class="text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full shadow-inner">
+                            Active
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-y-3 text-gray-700 text-sm md:grid-cols-4 md:text-base border-t pt-4 border-gray-200">
+                        
+                        
+                        <div>
+                            <strong class="block text-gray-500 mb-0.5">Date:</strong>
+                            <span class="font-medium">{{ booking.date|date:"l, F j, Y" }}</span>
+                        </div>
+                        <div>
+                            <strong class="block text-gray-500 mb-0.5">Time:</strong>
+                            <span class="font-medium">{{ booking.time|time:"H:i" }}</span>
+                        </div>
+                        
+                        
+                        <div class="md:col-span-2">
+                            <strong class="block text-gray-500 mb-0.5">Booked On:</strong>
+                            <span class="font-medium">{{ booking.created_at|date:"M j, Y \a\t H:i" }}</span>
+                        </div>
+
+                        
+                        <div class="col-span-2 md:col-span-4 mt-3 pt-3 border-t border-gray-100">
+                            <strong class="block text-gray-500 mb-2 text-sm">Contact Details:</strong>
+                            <div class="text-sm space-y-1">
+                                <p><strong>Name:</strong> {{ booking.full_name }}</p>
+                                <p><strong>Email:</strong> {{ booking.email }}</p>
+                                <p><strong>Phone:</strong> {{ booking.phone_number }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex justify-end space-x-4 mt-6 pt-4 border-t border-gray-200">
+                        
+                        
+                        <a href="{% url 'edit_booking' booking.pk %}" 
+                            class="text-sm font-medium text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition duration-150 shadow-md flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                            Edit
+                        </a>
+                        
+                        <a href="{% url 'cancel_booking' booking.pk %}" 
+                            class="text-sm font-medium text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition duration-150 shadow-md">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+        
+        <div class="text-center py-12 bg-gray-50 rounded-xl border border-dashed border-gray-300">
+            <svg class="w-16 h-16 mx-auto text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2m-7 13v-3m0-8V7"></path>
+            </svg>
+            <h3 class="mt-4 text-xl font-bold text-gray-900">No Reservations Found</h3>
+            <p class="mt-2 text-base text-gray-500">
+                Looks like you haven't made any bookings yet. Why not reserve a table?
+            </p>
+            <div class="mt-8">
+                <a href="{% url 'booking_form' %}" 
+                   class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-red-600 hover:bg-red-700 transition transform hover:scale-105">
+                    <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5-5 2.5V4z" />
+                    </svg>
+                    Book a Table Now
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock content %}

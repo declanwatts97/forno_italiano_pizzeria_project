@@ -29,3 +29,6 @@ def booking_form(request):
 
 def booking_success(request):
     return render(request, 'booking_success.html')
+
+def login (request):
+    return render(request, 'account/login.html')

@@ -26,7 +26,8 @@ urlpatterns = [
     path('booking_form/', index_views.booking_form, name='booking_form'),
     path('', index_views.home, name='home'),
     path('admin/', admin.site.urls),
-    path('success/', index_views.booking_success, name='booking_success')
+    path('success/', index_views.booking_success, name='booking_success'),
+    path("accounts/", include("allauth.urls")),
 ]
 
 if settings.DEBUG:

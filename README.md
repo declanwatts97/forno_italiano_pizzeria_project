@@ -211,6 +211,10 @@ The below wireframes were created at the beginning of the design process, these 
 
 ![wireframe-3](static/readme-images/wireframe-3.png)
 
+![wireframe-4](static/readme-images/wireframe-4.png)
+
+![wireframe-5](static/readme-images/wireframe-5.png)
+
 ### Entity Relationship Diagram
 
 The entity relationship diagram for this project is an optional one to many relationship from User to Booking, allowing both authenticated and guest bookings while enabling users to track their own reservations.

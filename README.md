@@ -205,15 +205,15 @@ The my bookings page shows any reservations which have been made by a user who i
 
 The below wireframes were created at the beginning of the design process, these were to be the layout followed for the creation of the site:
 
-![wireframe1](static/readme-images/wireframe-1.png)
+![wireframe 1](static/readme-images/wireframe-1.png)
 
-![wireframe2](static/readme-images/wireframe-2.png)
+![wireframe 2](static/readme-images/wireframe-2.png)
 
-![wireframe3](static/readme-images/wireframe-3.png)
+![wireframe 3](static/readme-images/wireframe-3.png)
 
-![wireframe4](static/readme-images/wireframe-4.png)
+![wireframe 4](static/readme-images/wireframe-4.jpeg)
 
-![wireframe5](static/readme-images/wireframe-5.png)
+![wireframe 5](static/readme-images/wireframe-5.jpeg)
 
 ### Entity Relationship Diagram
 

@@ -9,8 +9,6 @@
 <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md mt-10 mb-10">
     <h1 class="text-3xl font-extrabold text-gray-800 mb-6 text-center">{% trans "Create Your Account" %}</h1>
 
-
-
     {% if socialaccount.providers %}
     <div class="text-center my-4 text-gray-500">
         {% trans "— OR —" %}
@@ -35,7 +33,6 @@
                     {{ field.label }}
                 </label>
                 
-                {# KEY CHANGE: Ensure text-black class for visibility #}
                 {{ field|attr:'class:block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black' }} 
 
                 {% if field.errors %}
@@ -61,7 +58,6 @@
             </a>
         </p>
     </div>
-
     
 </div>
 {% endblock %}

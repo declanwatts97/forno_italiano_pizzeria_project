@@ -9,8 +9,6 @@
 <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md mt-10 mb-10">
     <h1 class="text-3xl font-extrabold text-gray-800 mb-6 text-center">{% trans "Sign In" %}</h1>
 
- 
-
     {% if socialaccount.providers %}
     <div class="text-center my-4 text-gray-500">
         {% trans "— OR —" %}
@@ -35,7 +33,6 @@
                     {{ field.label }}
                 </label>
                 
-                {# KEY CHANGE: Using |attr filter to force text-black for visibility #}
                 {{ field|attr:'class:block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black' }} 
 
                 {% if field.errors %}
@@ -47,8 +44,6 @@
         {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-
-        
         
         <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition focus:outline-none focus:shadow-outline mt-3" type="submit">
             {% trans "Sign In" %}
@@ -70,6 +65,5 @@
         </p>
     </div>
     
-   
 </div>
 {% endblock %}

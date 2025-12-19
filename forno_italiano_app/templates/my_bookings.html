@@ -9,7 +9,6 @@
     <h1 class="text-3xl font-extrabold text-gray-800 mb-8 border-b pb-4 text-center">
         {% trans "My Bookings" %}
     </h1>
-
     
     {% if bookings %}
         <p class="text-sm text-gray-600 mb-6 text-center">
@@ -24,15 +23,13 @@
                         <h2 class="text-xl font-bold text-red-900 mb-2 sm:mb-0">
                             Reservation for {{ booking.number_of_guests }} People
                         </h2>
-                        
-                        
+                    
                         <span class="text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full shadow-inner">
                             Active
                         </span>
                     </div>
 
                     <div class="grid grid-cols-2 gap-y-3 text-gray-700 text-sm md:grid-cols-4 md:text-base border-t pt-4 border-gray-200">
-                        
                         
                         <div>
                             <strong class="block text-gray-500 mb-0.5">Date:</strong>
@@ -43,13 +40,11 @@
                             <span class="font-medium">{{ booking.time|time:"H:i" }}</span>
                         </div>
                         
-                        
                         <div class="md:col-span-2">
                             <strong class="block text-gray-500 mb-0.5">Booked On:</strong>
                             <span class="font-medium">{{ booking.created_at|date:"M j, Y \a\t H:i" }}</span>
                         </div>
 
-                        
                         <div class="col-span-2 md:col-span-4 mt-3 pt-3 border-t border-gray-100">
                             <strong class="block text-gray-500 mb-2 text-sm">Contact Details:</strong>
                             <div class="text-sm space-y-1">
@@ -60,10 +55,8 @@
                         </div>
                     </div>
                     
-                    
                     <div class="flex justify-end space-x-4 mt-6 pt-4 border-t border-gray-200">
-                        
-                        
+                         
                         <a href="{% url 'edit_booking' booking.pk %}" 
                             class="text-sm font-medium text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition duration-150 shadow-md flex items-center">
                             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>

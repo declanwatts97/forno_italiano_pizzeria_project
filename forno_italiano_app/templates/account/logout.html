@@ -22,7 +22,6 @@
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
         {% endif %}
         
-        {# Display the hidden form field required by allauth (usually a confirmation field) #}
         {{ form.as_hidden }}
 
         <button class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition focus:outline-none focus:shadow-outline mt-3" type="submit">

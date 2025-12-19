@@ -219,7 +219,7 @@ The below wireframes were created at the beginning of the design process, these 
 
 The entity relationship diagram for this project is an optional one to many relationship from User to Booking, allowing both authenticated and guest bookings while enabling users to track their own reservations.
 
-One user can have zero, one or many bookings. A registered user can make multiple reservations over time. A yser can also have no bookings yet.
+One user can have zero, one or many bookings. A registered user can make multiple reservations over time. A user can also have no bookings yet.
 
 Each booking belongs to zero or one User. The foreign key means this relationship is optional. A booking can be made by a logged in user, or it can be made without logging in. Logged in users have their bookings tied to their profile for easier management.
 

@@ -323,11 +323,19 @@ First you need to clone this repositories URL, by copying the HTTPS. You can the
 ![menu ipad](static/readme-images/menu-ipad.png)
 ![restaurant ipad](static/readme-images/restaurant-ipad.png)
 ![booking ipad](static/readme-images/booking-ipad.png)
+![sign in ipad](static/readme-images/sign-in-ipad.png)
+![sign up ipad](static/readme-images/sign-up-ipad.png)
+![sign out ipad](static/readme-images/sign-out-ipad.png)
+![my bookings ipad](static/readme-images/mybookings-ipad.png)
 
 ![home mobile](static/readme-images/home-mobile.png)
 ![menu mobile](static/readme-images/menu-mobile.png)
 ![restaurant mobile](static/readme-images/restaurant-mobile.png)
 ![booking mobile](static/readme-images/booking-mobile.png)
+![sign in mobile](static/readme-images/sign-in-mobile.png)
+![sign up mobile](static/readme-images/sign-up-mobile.png)
+![sign out mobile](static/readme-images/signout-mobile.png)
+![my bookings mobile](static/readme-images/my-bookings-mobile.png)
 
 4. Table booking - the table booking function was tested in 2 main ways:
 

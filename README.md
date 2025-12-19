@@ -65,6 +65,10 @@ The website has been created with the below goals in mind:
 
 5. Admin access for database - The website needs to have access to the database so that the restaurant manager can view table bookings and arrange service.
 
+6. User authentication - The website must have functionality for users to sign up and log in.
+
+7. View bookings - The website must have functionality for authenticated users to be able to view all active bookings as well as edit and delete these bookings.
+
 ## User Stories
 ### Website Visitors
 
@@ -104,7 +108,7 @@ The website has been created with the below goals in mind:
 
 4. As a developer I require a detailed Readme document which outlines the planning, development and deployment procedure.
 
-5. As a developer I require customers to be able to book tables, and if a double booking occurs that they are notified and the booking returns an error message.
+5. As a developer I require customers to be able to book tables, and if authenticated through sign in be able to view, edit and delete bookings they have made.
 
 ### Acceptance Criteria
 
@@ -116,20 +120,24 @@ The website has been created with the below goals in mind:
 
 4. If a new contributor clones the repository and opens the readme, they should have a full description of the purpose of the project, design choices made and the deployment procedure.
 
-5. If a table is already booked for a specific date or time and a second user tries to book, the system should check availability in real time and return an eror message if double booked.
+5. When signed in, the user should be able to view all active bookings they have and be able to edit and delete bookings direct from the my bookings page.
 
 ## Structure
 
-The site has 5 active pages:
+The site has 8 active pages:
 - A home landing page
 - An our restaurants page so customers can view our contact information
 - A menu page, so customers can view our menu online with prices.
 - A table booking page, so customers can book a table online.
 - A table booking success page, so customers are made aware that their booking has been accepted.
+- A sign in page for authentication.
+- A sign up page for users to make an account.
+- A sign out page for users to sign out of their account.
+- A my bookings page, for users to view, edit and delete bookings they have made while authenticated.
 
 ### Navbar
 
-The navbar contains the pizzeria logo, name, and 4 active links. These links are to the menu, our restaurant page, book table page, and back to home. The navbar switches to a hamburger icon o  smaller screen sizes.
+The navbar contains the pizzeria logo, name, and 5 active links. These links are to the menu, our restaurant page, sign in, sign up, and back to home. The navbar switches to a hamburger icon on smaller screen sizes. When the user is validated the navbar changes to home, menu, our restaurant, my bookings, book table and sign out.
 
 ### Footer
 
@@ -151,19 +159,43 @@ The menu page is split into 4 sections for appetizers, pizzas, desserts and drin
 
 The our restaurants page gives the customer all of the restaurants info. The contact information of email and phone number along with the address and the opening hours. There is also a picture of the inside of the restaurant.
 
-![our restaurant](static/readme-images/our-restaurants.png)
+![our restaurant](static/readme-images/our-restaurant.png)
 
 ### Book Table Page
 
 The book table page contains all the relevant information for a customer to reserve a table. This is displayed in a form to be filled in with a submit button once complete.
 
-![alt text](static/readme-images/book-table.png)
+![book table](static/readme-images/book-table.png)
 
 ### Book Table Success Page
 
 The table booking success page returns a message thanking the customer for booking and that we look forward to seeing them. Theres a return to home button to take them back to the home page.
 
-![alt text](static/readme-images/booking-success.png)
+![booking success](static/readme-images/booking-success.png)
+
+### Sign In Page
+
+The sign in page contains a form which requests username, password and a remember me button. There is a button to confirm sign in and a forgot password link. There is also a link to the sign up page for users without an account. Once the sign in button is pressed, if a user has a registered account they will be signed in.
+
+![sign in](static/readme-images/sign-in.png)
+
+### Sign Up Page
+
+The sign up page contains a form which when filled in and submitted will sign you up to the website. The fields of the form are Username, Email, Password and a repeat of password to check consistency. In future when signed up this will send an email to the user to confirm. There's also a link to the sign in screen in case the user is on the wrong page.
+
+![sign up](static/readme-images/sign-up.png)
+
+### Sign Out Page
+
+The sign out page shows a message asking if the user is sure they want to sign out, with a button which when pressed will sign the user out. There's also a link to return to the home page.
+
+![sign out](static/readme-images/sign-out.png)
+
+### My Bookings Page
+
+The my bookings page shows any reservations which have been made by a user who is signed in, giving them the option to edit of delete these bookings.
+
+![my bookings](static/readme-images/my-bookings.png)
 
 ## Design
 
@@ -179,11 +211,15 @@ The below wireframes were created at the beginning of the design process, these 
 
 ### Entity Relationship Diagram
 
-The entity relationship diagram for this project is a single entity, meaning there are no one to many or many to many relationships. This entity stands alone.
+The entity relationship diagram for this project is an optional one to many relationship from User to Booking, allowing both authenticated and guest bookings while enabling users to track their own reservations.
+
+One user can have zero, one or many bookings. A registered user can make multiple reservations over time. A yser can also have no bookings yet.
+
+Each booking belongs to zero or one User. The foreign key means this relationship is optional. A booking can be made by a logged in user, or it can be made without logging in. Logged in users have their bookings tied to their profile for easier management.
 
 This shows the chosen model behind the database for the table booking system which has been put in place for the website.
 
-![entity relationship diagram](static/readme-images/entity-relationship-diagram.png)
+![entity relationship diagram](static/readme-images/ERD.png)
 
 ### Colour Scheme
 
@@ -214,7 +250,7 @@ Gemini AI was used to create the business logo.
 - HTML5: The standard language of a web page.
 - CSS3: For styling the website.
 - Javascript - For creating the interactive trivia quiz.
-- Python - Used through the Django framework for the models, views, url's of the site.
+- Python - Used through the Django framework for the models, views, url's of the site. The style guide used for writing the code in this project was PEP8.
 - Django - the django framework was used for the building of this site.
 - Taiwind: To create responsive design and also page styling through the use of classes.
 - Favicon.io: For adding the favicon on the title bar of webpage.
@@ -273,7 +309,7 @@ First you need to clone this repositories URL, by copying the HTTPS. You can the
 
 10. As a developer I require a readme document which outlines the planning, development and deployment procedure. I tested this by asking a friend to read through and check they can follow the life cycle of this project.
 
-11. As a developer I require customers to be able to book tables, an error message show if a double book in occurs. This was tested by purposely double booking through the deployed site and ensuring that it is rejected from being sent to the database with the message being returned.
+11. As a developer I require customers to be able to book tables, and if authenticated through sign in be able to view, edit and delete bookings they have made. This was tested by signing in, and creating a booking. Once this was done I made sure it was showing with the full correct information in the my bookings page. This worked as expected.
 
 ### Manual Testing
 
@@ -293,22 +329,48 @@ First you need to clone this repositories URL, by copying the HTTPS. You can the
 ![restaurant mobile](static/readme-images/restaurant-mobile.png)
 ![booking mobile](static/readme-images/booking-mobile.png)
 
-4. Table booking - the table booking function was tested in 3 main ways:
+4. Table booking - the table booking function was tested in 2 main ways:
 
 - Through filling in the information on the form and submitting, ensuring that the information was accepted and returned the success page.
 
 - Ensuring that this successful booking was sent through to the admin panel, with the booking and all information submitted showing to the site owner.
 
-- Purposely double booking and ensuring that the error message is returned to prevent a double booking.
 
 Screenshots for these points are below:
 
-![booking form](static/readme-images/booking-form.png)
-![booking error](static/readme-images/booking-error.png)
+![booking form](static/readme-images/book-table.png)
 ![booking success](static/readme-images/booking-success.png)
 ![booking admin](static/readme-images/booking-admin.png)
 
-5. HTML Validation - I ran my html code through the W3C validator service and have provided screenshots below. The only remaining errors are as a result of Django's blocks and templates:
+5. CRUD Testing - The CRUD testing was completed by:
+
+Signing into a user account and ensuring that authentication was complete. This was tested by the home page navbar changing to include the my bookings link. Opening the my bookings page to a blank screen with no bookings.
+
+![no bookings](static/readme-images/no-bookings.png)
+
+I then went and made a booking through the book table page.
+
+![booking test](static/readme-images/booking-test.png)
+
+I then went back to the my bookings page to ensure that this was shown.
+
+![test confirmation](static/readme-images/test-confirmation.png)
+
+I then clicked the edit button and changed the details on the booking form.
+
+![edit test](static/readme-images/edit-test.png)
+
+And then went back to the my bookings page to see that it has pulled through the updated information.
+
+![edit confirmation](static/readme-images/edit-confirmation.png)
+
+I then clicked the delete button which took me back to the below screen.
+
+![no bookings](static/readme-images/no-bookings.png)
+
+This confirmed all CRUD funtionality worked as expected.
+
+6. HTML Validation - I ran my html code through the W3C validator service and have provided screenshots below. The only remaining errors are as a result of Django's blocks and templates:
 
 ![base validation](static/readme-images/base-validation.png)
 ![home validation](static/readme-images/home-validation.png)
@@ -317,15 +379,15 @@ Screenshots for these points are below:
 ![booking form validation](static/readme-images/booking-form-validation.png)
 ![booking success validation](static/readme-images/booking-success-validation.png)
 
-6. CSS validation - I ran my css code through the W3C validator service and have provided screenshots below. My code passed through the validator with no errors.
+7. CSS validation - I ran my css code through the W3C validator service and have provided screenshots below. My code passed through the validator with no errors.
 
 ![css validation](static/readme-images/css-validation.png)
 
-7. JavaScript Validation - I ran my JavaScript code through JS lint and have provided screenshots below. MY code passed through with no major errors on the validator.
+8. JavaScript Validation - I ran my JavaScript code through JS lint and have provided screenshots below. MY code passed through with no major errors on the validator.
 
 ![js validation](static/readme-images/js-validation.png)
 
-8. Dev Tools - I checked my code through the console on chrome dev tools. One area to improve in the future is the that tailwind CCS needs to amended to a post CSS plugin or use the tailwind CLI for production. This will be fixed in future updates.
+9. Dev Tools - I checked my code through the console on chrome dev tools. One area to improve in the future is the that tailwind CCS needs to amended to a post CSS plugin or use the tailwind CLI for production. This will be fixed in future updates.
 
 ### Testing Summary
 

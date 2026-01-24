@@ -38,9 +38,9 @@
 
                 {# This renders the help text with the specific ID the input is looking for #}
                 {% if field.help_text %}
-                    <span id="{{ field.auto_id }}_helptext" class="text-xs text-gray-500 mt-1 block">
+                    <div id="{{ field.auto_id }}_helptext" class="text-xs text-gray-500 mt-1 block">
                         {{ field.help_text|safe }}
-                    </span>
+                    </div>
                 {% endif %}
 
                 {% if field.errors %}

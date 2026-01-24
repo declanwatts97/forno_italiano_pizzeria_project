@@ -386,16 +386,15 @@ This confirmed all CRUD funtionality worked as expected.
 
 6. HTML Validation - I ran my html code through the W3C validator service and have provided screenshots below. The only remaining errors are as a result of Django's blocks and templates:
 
-![base validation](static/readme-images/base-validation.png)
-![home validation](static/readme-images/home-validation.png)
-![menu validation](static/readme-images/menu-validation.png)
-![our restaurant validation](static/readme-images/our-restaurant-validation.png)
-![booking form validation](static/readme-images/booking-form-validation.png)
-![booking success validation](static/readme-images/booking-success-validation.png)
-![log in validation](static/readme-images/login-validation.png)
-![sign out validation](static/readme-images/sign-out-validation.png)
-![sign up validation](static/readme-images/sign-up-validation.png)
-![my bookings validation](static/readme-images/my-booking-validation.png)
+![home validation](staticfiles/readme-images/home-validation.png)
+![menu validation](staticfiles/readme-images/menu-validation.png)
+![our restaurants validation](staticfiles/readme-images/our-restaurants-validation.png)
+![sign up validation](staticfiles/readme-images/signup-validation.png)
+![log in validation](staticfiles/readme-images/login-validation.png)
+![sign out validation](staticfiles/readme-images/signout-validation.png)
+![my bookings validation](staticfiles/readme-images/my-bookings-validation.png)
+![booking form validation](staticfiles/readme-images/booking-form-validation.png)
+![booking success validation](staticfiles/readme-images/booking-success-validation.png)
 
 7. CSS validation - I ran my css code through the W3C validator service and have provided screenshots below. My code passed through the validator with no errors.
 

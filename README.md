@@ -384,7 +384,7 @@ I then clicked the delete button which took me back to the below screen.
 
 This confirmed all CRUD funtionality worked as expected.
 
-6. HTML Validation - I ran my html code through the W3C validator service and have provided screenshots below. The only remaining errors are as a result of Django's blocks and templates:
+6. HTML Validation - I ran my html code through the W3C validator service and have provided screenshots below. There are no errors to report.
 
 ![home validation](staticfiles/readme-images/home-validation.png)
 ![menu validation](staticfiles/readme-images/menu-validation.png)

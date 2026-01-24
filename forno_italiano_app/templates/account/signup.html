@@ -33,7 +33,15 @@
                     {{ field.label }}
                 </label>
                 
+                {# The input field #}
                 {{ field|attr:'class:block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black' }} 
+
+                {# This renders the help text with the specific ID the input is looking for #}
+                {% if field.help_text %}
+                    <span id="{{ field.auto_id }}_helptext" class="text-xs text-gray-500 mt-1 block">
+                        {{ field.help_text|safe }}
+                    </span>
+                {% endif %}
 
                 {% if field.errors %}
                     <p class="mt-1 text-xs text-red-500">{{ field.errors }}</p>
